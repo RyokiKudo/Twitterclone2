@@ -87,6 +87,11 @@ const Sidebar = () =>{
             label: 'もっと見る',
             href: '/seemore',
             icon: HiOutlineDotsCircleHorizontal
+        },
+        {
+            label: 'ログアウト',
+            href: '/logout',
+            icon: BiLogOut
         }
     ];
     return (
