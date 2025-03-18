@@ -87,11 +87,6 @@ const Sidebar = () =>{
             label: 'もっと見る',
             href: '/seemore',
             icon: HiOutlineDotsCircleHorizontal
-        },
-        {
-            label: 'ログアウト',
-            href: '/logout',
-            icon: BiLogOut
         }
     ];
     return (
@@ -108,7 +103,7 @@ const Sidebar = () =>{
                           icon={item.icon}
                         />
                     ))}
-                    {/*<SidebarItem onclick={()=> {}} icon={BiLogOut} label="Logout"/> {/*ログアウト表示*/}
+                    <SidebarItem onclick={()=> {}} icon={BiLogOut} label="ログアウト"/> {/*ログアウト表示*/}
                     <SidebarTweetButton />
                 </div>
             </div>
