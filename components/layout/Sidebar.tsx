@@ -103,7 +103,7 @@ const Sidebar = () =>{
                           icon={item.icon}
                         />
                     ))}
-                    {/*<SidebarItem onclick={()=> {}} icon={BiLogOut} label="Logout"/> {/*ログアウト表示*/}
+                    <SidebarItem onclick={()=> {}} icon={BiLogOut} label="ログアウト"/> {/*ログアウト表示*/}
                     <SidebarTweetButton />
                 </div>
             </div>
