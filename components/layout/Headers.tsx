@@ -22,7 +22,11 @@ const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
                         onClick={handleBack}
                         color="white"
                         size={20}
-                        className="cursor-pointer hover:opacity-70 transition"
+                        className="
+                            cursor-pointer
+                            hover:opacity-70 
+                            transition
+                        "
                     />
                 )}
                 <h1 className="text-white text-xl font-semibold">{label}</h1>
