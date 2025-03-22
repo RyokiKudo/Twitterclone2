@@ -95,7 +95,7 @@ const Modal:React.FC<ModalProps> = ({
                                 rounded-t
                             "
                         >
-                            <h3 className=""
+                            <h3 className="text-3xl font-semibold text-white">{title}</h3>
                         </div>
                     </div>
                 </div>
