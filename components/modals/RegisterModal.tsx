@@ -3,7 +3,7 @@ import { use, useCallback, useState } from "react";
 import Input from "../Input";
 import Modal from "../Modal";
 
-const LoginModal = () => {
+const RegisterModal = () => {
     const loginModal = useLoginModal();
 
     const [email, setEmail] = useState("");
@@ -55,4 +55,4 @@ const LoginModal = () => {
     );
 }
 
-export default LoginModal;
+export default RegisterModal;
