@@ -7,7 +7,7 @@ interface LoginModalStore {
 };
 
 const useLoginModal = create<LoginModalStore>((set) => ({
-    isOpen: true,
+    isOpen: false, //trueにすると何もしないで、Login画面が開く
     onOpen: () => set({ isOpen: true }),
     onClose: () => set({ isOpen: false })
 }));

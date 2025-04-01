@@ -10,6 +10,7 @@ interface ModalProps {
     body: React.ReactElement;
     actionLabel: string;
     disabled?: boolean;
+    footer?: React.ReactElement; //COPIKOTの説明による修正
 }
 
 const Modal:React.FC<ModalProps> = ({

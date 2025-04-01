@@ -7,7 +7,7 @@ interface RegisterModalStore {
 };
 
 const useRegisterModal = create<RegisterModalStore>((set) => ({
-    isOpen: true,
+    isOpen: true, // trueにすると何もしないで、Login画面が開く
     onOpen: () => set({ isOpen: true }),
     onClose: () => set({ isOpen: false })
 }));

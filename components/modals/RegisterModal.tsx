@@ -35,25 +35,25 @@ const RegisterModal = () => {
     const bodyContent = (
         <div className="flex flex-col gap-4">
             <Input
-                placeholder="Email"
+                placeholder="メールアドレス"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 disabled={isLoading}             
             />
             <Input
-                placeholder="Name"
+                placeholder="名前"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 disabled={isLoading}             
             />
             <Input
-                placeholder="Username"
+                placeholder="アカウント名"
                 onChange={(e) => setUsername(e.target.value)}
                 value={username}
                 disabled={isLoading}             
             />        
             <Input
-                placeholder="Password"
+                placeholder="パスワード"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 disabled={isLoading} 
@@ -61,15 +61,30 @@ const RegisterModal = () => {
         </div>
     );
 
+    const footerContent = (
+        <div className="text-neutral-400 text-center mt-4">
+            <p>すでにアカウントをお持ちですか？</p>
+            <span 
+                className="
+                    text-white
+                    cursor-pointer
+                    hover:underline
+                "
+            >ログイン</span>
+        </div>
+    );
+
+
     return (
         <Modal 
             disabled={isLoading}
             isOpen={registerModal.isOpen}
-            title="Create an account"
-            actionLabel="Register"
+            title="アカウントを作成"
+            actionLabel="次へ"
             onClose={registerModal.onClose} //登録画面の✖ボタン を押したときの処理 close関数を渡して呼び出している
             onSubmit={onsubmit}
             body={bodyContent}
+            footer={footerContent} //フッターの内容を渡す
             />
     );
 }
