@@ -1,29 +1,36 @@
-import useLoginModal from "@/hooks/useLoginModal";
 import { use, useCallback, useState } from "react";
+
+import useLoginModal from "@/hooks/useLoginModal";
+import useRegisterModal from "@/hooks/useRegisterModal";
+
 import Input from "../Input";
 import Modal from "../Modal";
 
+
 const RegisterModal = () => {
     const loginModal = useLoginModal();
+    const registerModal = useRegisterModal();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [usename, setUsername] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
     const onsubmit = useCallback(async() => {
         try {
             setIsLoading(true);
 
-            // Todo: Add login
+            // Todo: Add REGISTAR AND LOGIN
 
             
-        loginModal.onClose();
+        registerModal.onClose();
         } catch (error) {
             console.log(error);
         } finally {
             setIsLoading(false);
         }
-    },[loginModal]);
+    },[registerModal]);
 
     const bodyContent = (
         <div className="flex flex-col gap-4">
@@ -31,8 +38,20 @@ const RegisterModal = () => {
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                disabled={isLoading} 
+                disabled={isLoading}             
             />
+            <Input
+                placeholder="Name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                disabled={isLoading}             
+            />
+            <Input
+                placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)}
+                value={name}
+                disabled={isLoading}             
+            />        
             <Input
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
