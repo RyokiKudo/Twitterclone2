@@ -14,7 +14,7 @@ const RegisterModal = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-    const [usename, setUsername] = useState("");
+    const [username, setUsername] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
     const onsubmit = useCallback(async() => {
@@ -49,7 +49,7 @@ const RegisterModal = () => {
             <Input
                 placeholder="Username"
                 onChange={(e) => setUsername(e.target.value)}
-                value={name}
+                value={username}
                 disabled={isLoading}             
             />        
             <Input
@@ -64,10 +64,10 @@ const RegisterModal = () => {
     return (
         <Modal 
             disabled={isLoading}
-            isOpen={loginModal.isOpen}
-            title="Login"
-            actionLabel="Sign in"
-            onClose={loginModal.onClose} //登録画面の✖ボタン を押したときの処理 close関数を渡して呼び出している
+            isOpen={registerModal.isOpen}
+            title="Create an account"
+            actionLabel="Register"
+            onClose={registerModal.onClose} //登録画面の✖ボタン を押したときの処理 close関数を渡して呼び出している
             onSubmit={onsubmit}
             body={bodyContent}
             />
