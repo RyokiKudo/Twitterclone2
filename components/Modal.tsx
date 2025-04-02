@@ -8,9 +8,10 @@ interface ModalProps {
     onSubmit: () => void;
     title: string;
     body: React.ReactElement;
+    footer?: React.ReactElement; //COPIKOTの説明による修正
     actionLabel: string;
     disabled?: boolean;
-    footer?: React.ReactElement; //COPIKOTの説明による修正
+    
 }
 
 const Modal:React.FC<ModalProps> = ({
