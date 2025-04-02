@@ -18,7 +18,11 @@ const RegisterModal = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const onToggle = useCallback(() => {
+        if(isLoading) {
+            return;
+        }
 
+        
     },[]);
 
     const onsubmit = useCallback(async() => {
