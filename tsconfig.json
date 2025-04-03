@@ -14,7 +14,8 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["./components/layout/*"] // @/components/* を components ディレクトリにマッピングします。
+      "@/*":["./*"], // @/* をルートディレクトリにマッピングします。//これを付けたおかげで、バージョン問題が直った
+      "@/components/*": ["./components/*"] // @/components/* を components ディレクトリにマッピングします。
       // 他のエイリアスも必要に応じてここに追加します:
       // "@/styles/*": ["styles/*"],
       // "@/utils/*": ["utils/*"],
