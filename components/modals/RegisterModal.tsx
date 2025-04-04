@@ -1,4 +1,4 @@
-import { use, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 
 import useLoginModal from "@/hooks/useLoginModal";
 import useRegisterModal from "@/hooks/useRegisterModal";
@@ -24,7 +24,7 @@ const RegisterModal = () => {
 
         registerModal.onClose(); //登録画面の✖ボタン を押したときの処理 close関数を渡して呼び出しているregisterModal.onClose();
         loginModal.onOpen(); //ログイン画面の✖ボタン を押したときの処理 close関数を渡して呼び出しているloginModal.onOpen();        
-    },[]);
+    },[isLoading, registerModal, loginModal]);
 
     const onsubmit = useCallback(async() => {
         try {
@@ -72,17 +72,18 @@ const RegisterModal = () => {
 
     const footerContent = (
         <div className="text-neutral-400 text-center mt-4">
-            <p>すでにアカウントをお持ちですか？</p>
-            <span 
-                className="
-                    text-white
-                    cursor-pointer
-                    hover:underline
-                "
-            >ログイン</span>
+            <p>すでにアカウントをお持ちですか？
+                <span
+                    onClick={onToggle}  
+                    className="
+                        text-white
+                        cursor-pointer
+                        hover:underline
+                    "
+                > ログイン</span>
+            </p>
         </div>
-    );
-
+    )
 
     return (
         <Modal 
@@ -94,7 +95,7 @@ const RegisterModal = () => {
             onSubmit={onsubmit}
             body={bodyContent}
             footer={footerContent} //フッターの内容を渡す
-            />
+        />
     );
 }
 
