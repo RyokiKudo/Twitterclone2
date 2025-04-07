@@ -1,10 +1,19 @@
 import { useRouter } from "next/router";
+import React, { useCallback } from "react";
 import { FaFeather } from "react-icons/fa";
+
+import useLoginModal from "@/hooks/useLoginModal"; //useLoginModalはカスタムフックで、ログインモーダルを表示するためのものです。
 
 const SidebarTweetButton = () => {
     const router = useRouter();
+    const loginModal = useLoginModal(); //useLoginModalはカスタムフックで、ログインモーダルを表示するためのものです。
+
+    const onClick = useCallback(() => {
+        loginModal.onOpen(); //ログインモーダルを開く関数を呼び出します。
+    },[loginModal]); //loginModalが変更されたときに再実行されるようにします。
+
     return(
-        <div onClick={() => router.push('/')}>
+        <div onClick={onClick}>
             <div
                 className="
                     mt-6
