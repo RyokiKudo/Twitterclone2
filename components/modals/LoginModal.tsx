@@ -20,8 +20,8 @@ const LoginModal = () => {
             return;
         }
 
-        registerModal.onClose(); //登録画面の✖ボタン を押したときの処理 close関数を渡して呼び出しているregisterModal.onClose();
-        loginModal.onOpen(); //ログイン画面の✖ボタン を押したときの処理 close関数を渡して呼び出しているloginModal.onOpen();        
+        loginModal.onClose(); //登録画面の✖ボタン を押したときの処理 close関数を渡して呼び出しているregisterModal.onClose();
+        registerModal.onOpen(); //ログイン画面の✖ボタン を押したときの処理 close関数を渡して呼び出しているloginModal.onOpen();        
     },[isLoading, registerModal, loginModal]);
 
     const onsubmit = useCallback(async() => {
