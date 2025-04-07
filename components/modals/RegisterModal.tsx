@@ -18,7 +18,6 @@ const RegisterModal = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const onToggle = useCallback(() => {
-        console.log("isLoading", isLoading); //デバッグ用
         if(isLoading) {
             return;
         }
@@ -74,6 +73,7 @@ const RegisterModal = () => {
         <div className="text-neutral-400 text-center mt-4">
             <p>すでにアカウントをお持ちですか？
                 <span
+                    onClick={onToggle} //ログイン画面の✖ボタン を押したときの処理 close関数を渡して呼び出している
                     className="
                         text-white
                         cursor-pointer

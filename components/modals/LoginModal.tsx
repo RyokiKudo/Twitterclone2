@@ -28,13 +28,13 @@ const LoginModal = () => {
     const bodyContent = (
         <div className="flex flex-col gap-4">
             <Input
-                placeholder="Email"
+                placeholder="メールアドレス"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 disabled={isLoading} 
             />
             <Input
-                placeholder="Password"
+                placeholder="パスワード"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 disabled={isLoading} 
@@ -46,8 +46,8 @@ const LoginModal = () => {
         <Modal 
             disabled={isLoading}
             isOpen={loginModal.isOpen}
-            title="Login"
-            actionLabel="Sign in"
+            title="ログイン"
+            actionLabel="ログイン"
             onClose={loginModal.onClose} //登録画面の✖ボタン を押したときの処理 close関数を渡して呼び出している
             onSubmit={onsubmit}
             body={bodyContent}
