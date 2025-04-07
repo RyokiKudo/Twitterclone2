@@ -70,7 +70,7 @@ const RegisterModal = () => {
         </div>
     );
 
-    const footerContent = <div>テスト用フッター</div>/*(
+    const footerContent = (
         <div className="text-neutral-400 text-center mt-4">
             <p>すでにアカウントをお持ちですか？
                 <span
@@ -82,7 +82,7 @@ const RegisterModal = () => {
                 >ログイン</span>
             </p>
         </div>
-    )*/
+    )
 
 
     return (
