@@ -11,13 +11,14 @@ const RegisterModal = () => {
     const loginModal = useLoginModal();
     const registerModal = useRegisterModal();
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [name, setName] = useState("");
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [username, setUsername] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
     const onToggle = useCallback(() => {
+        console.log("isLoading", isLoading); //デバッグ用
         if(isLoading) {
             return;
         }
@@ -32,8 +33,7 @@ const RegisterModal = () => {
 
             // Todo: Add REGISTAR AND LOGIN
 
-            
-        registerModal.onClose();
+            registerModal.onClose();
         } catch (error) {
             console.log(error);
         } finally {
@@ -70,20 +70,20 @@ const RegisterModal = () => {
         </div>
     );
 
-    const footerContent = (
+    const footerContent = <div>テスト用フッター</div>/*(
         <div className="text-neutral-400 text-center mt-4">
             <p>すでにアカウントをお持ちですか？
                 <span
-                    onClick={onToggle}  
                     className="
                         text-white
                         cursor-pointer
                         hover:underline
                     "
-                > ログイン</span>
+                >ログイン</span>
             </p>
         </div>
-    )
+    )*/
+
 
     return (
         <Modal 
@@ -94,7 +94,7 @@ const RegisterModal = () => {
             onClose={registerModal.onClose} //登録画面の✖ボタン を押したときの処理 close関数を渡して呼び出している
             onSubmit={onsubmit}
             body={bodyContent}
-            footer={footerContent} //フッターの内容を渡す
+            footer={footerContent} //登録画面の✖ボタン を押したときの処理 close関数を渡して呼び出している
         />
     );
 }
